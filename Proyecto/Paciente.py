@@ -1,5 +1,5 @@
-from tkinter import N
-from Celula import listasdoble_celula
+
+from Celula import lista_celulas
 
 class paciente:
     def __init__(self,nombre,edad,tamano,periodo,siguiente=None,anterior=None) -> None:
@@ -7,7 +7,7 @@ class paciente:
         self.edad=edad
         self.tamano=tamano
         self.periodo=periodo
-        self.celula=listasdoble_celula()
+        self.celula=lista_celulas(tamano)
         
 
 

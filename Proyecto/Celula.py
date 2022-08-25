@@ -12,13 +12,14 @@ class celula:
 
 
 class lista_celulas:
-    def __init__(self):
+    def __init__(self,tamano):
+        self.tamano=tamano
         self.primero=None
 
-    def append(self,tamano):
+    def append(self):
             
-            for i in range(1,tamano+1):
-                for j in range(1,tamano+1):
+            for i in range(1,self.tamano+1):
+                for j in range(1,self.tamano+1):
 
                     if self.primero is None:
                        nueva_celula=celula(tipo="1",fila=i,columna=j)
@@ -33,13 +34,13 @@ class lista_celulas:
                         nueva_celula.anterior=nodo_aux
                         nodo_aux=nodo_aux.siguiente
                         
-    def print(self,tamano):
+    def print(self):
         aux=self.primero
         x=1
         
-        for i in range(1,tamano+1):
+        for i in range(1,self.tamano+1):
             print("Fila",x,"| ",end="")
-            for j in range(1,tamano+1):
+            for j in range(1,self.tamano+1):
                 print(aux.tipo,end=" ")
                 aux=aux.siguiente
             x+=1

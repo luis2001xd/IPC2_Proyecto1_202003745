@@ -20,7 +20,7 @@ def menu():
         print()
         opcion=int(input())
         if opcion==1:
-            cargar_archivo("prueba.xml")
+            cargar_archivo("Proyecto\prueba.xml")
             print("Archivo cargado con éxito")
 
         if opcion==2:
@@ -30,6 +30,8 @@ def menu():
             print("Escoja su paciente")
             paciente=input()
             paciente_buscado=npacientes.buscar(paciente)
+            print(paciente_buscado.paciente.edad)
+            print(paciente_buscado.paciente)
             
 
         
@@ -49,19 +51,21 @@ def cargar_archivo(ruta):
         edad_entero=int(edad)
         tamano=nuevo_paciente.find("m").text
         tamano_entero=int(tamano)
-        periodo=nuevo_paciente.find("periodos")
+        periodo=nuevo_paciente.find("periodos").text
         periodo_entero=int(periodo)
 
         #creación de un nuevo paciente
         paciente_nuevo=paciente(nombre,edad_entero,tamano_entero,periodo_entero)
         npacientes.append(paciente_nuevo)
+        paciente_nuevo.celula.append()
+
+        #creación de rejilla
+        
+        
 
         #lectura de filas y columnas contagiadas
-        for x in pacientes.findall("rejilla"):
-            for y in x.findall("celda"):
-                fila=y.get("f")
-                columna=y.get("c")
-                print(fila,columna)
+        for x in nuevo_paciente.iter("celda"):
+            print(x.attrib["f"],x.attrib["c"])
     
     
         
