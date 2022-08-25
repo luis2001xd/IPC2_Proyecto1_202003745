@@ -1,6 +1,5 @@
 from colorama import Fore
 import xml.etree.ElementTree as ET
-from xml.dom import minidom
 from Paciente import paciente
 from Paciente import lista_paciente
 npacientes=lista_paciente()
