@@ -11,7 +11,7 @@ class celula:
 
 
 
-class lista_celula:
+class lista_celulas:
     def __init__(self):
         self.primero=None
 
