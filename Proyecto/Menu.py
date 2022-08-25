@@ -3,7 +3,6 @@ import xml.etree.ElementTree as ET
 from xml.dom import minidom
 from Paciente import paciente
 from Paciente import lista_paciente
-from Celula import listadoble_celula
 npacientes=lista_paciente()
 
 
@@ -46,15 +45,24 @@ def cargar_archivo(ruta):
         datos_personales=nuevo_paciente.find("datospersonales")
         nombre=datos_personales.find("nombre").text
         edad=datos_personales.find("edad").text
+
         #covertir mis variables a enteros
         edad_entero=int(edad)
         tamano=nuevo_paciente.find("m").text
         tamano_entero=int(tamano)
         periodo=nuevo_paciente.find("periodos")
         periodo_entero=int(periodo)
+
         #creación de un nuevo paciente
         paciente_nuevo=paciente(nombre,edad_entero,tamano_entero,periodo_entero)
         npacientes.append(paciente_nuevo)
+
+        #lectura de filas y columnas contagiadas
+        for x in pacientes.findall("rejilla"):
+            for y in x.findall("celda"):
+                fila=y.get("f")
+                columna=y.get("c")
+                print(fila,columna)
     
     
         
