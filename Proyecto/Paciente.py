@@ -7,7 +7,7 @@ class paciente:
         self.edad=edad
         self.tamano=tamano
         self.periodo=periodo
-        self.celula=lista_celulas(tamano)
+        self.celula=lista_celulas(tamano,periodo)
         
 
 
@@ -36,7 +36,7 @@ class lista_paciente:
     def print(self):
         nodoaux=self.primero
         while nodoaux!=None:
-            print(nodoaux.paciente.nombre,nodoaux.paciente.edad)
+            print("Nombre:",nodoaux.paciente.nombre,"Edad:",nodoaux.paciente.edad)
             nodoaux=nodoaux.siguiente
 
 
@@ -47,7 +47,7 @@ class lista_paciente:
                 nodoaux=nodoaux.siguiente
             else:
                 print("Paciente no encontrado")
-                return  
+                return  None
         return nodoaux
 
 

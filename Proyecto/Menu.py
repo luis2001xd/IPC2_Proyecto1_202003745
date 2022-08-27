@@ -8,20 +8,21 @@ npacientes=lista_paciente()
 def menu():
     print(Fore.YELLOW+"------------Bienvenido usuario ♣--------------")
     opcion=""
+    
     while opcion!=4:
-        
+        opcion_ejecucion=""
         print()
         print(Fore.CYAN+"------------Menú---------------")
         print()
         print(Fore.CYAN+"1. Cargar Archivo")
-        print(Fore.CYAN+"2. Imprimir pacientes")
+        print(Fore.CYAN+"2. Ver pacientes")
         print(Fore.CYAN+"3. Elegir paciente")
         print(Fore.CYAN+"4.Salir")
         print()
         opcion=int(input())
         if opcion==1:
-            cargar_archivo("Proyecto\prueba.xml")
-            print("Archivo cargado con éxito")
+            cargar_archivo("prueba.xml")
+            print("Archivo cargado con éxito :)")
 
         if opcion==2:
             npacientes.print()
@@ -30,8 +31,27 @@ def menu():
             print("Escoja su paciente")
             paciente=input()
             paciente_buscado=npacientes.buscar(paciente)
-            print(paciente_buscado.paciente.edad)
-            print(paciente_buscado.paciente)
+            if paciente_buscado is None:
+                print(Fore.RED+("El paciente no ha sido encontrado"))
+            else:
+                while opcion_ejecucion != 3:
+                    print(Fore.GREEN+"1. Ejecutar períodos proporcionados por el xml")
+                    print(Fore.GREEN+"2. Ejecutar períodos hasta que la enfermedad sea grave")
+                    print(Fore.GREEN+"3. Salir")
+                    opcion_ejecucion=int(input())
+                    
+                    if opcion_ejecucion == 1:
+                        print("Patrón inicial:")
+                        
+                        print(paciente_buscado.paciente.celula.imprimir())
+                        x=1
+                        while x<=5:
+                            paciente_buscado.paciente.celula.periodos()
+                            print(paciente_buscado.paciente.celula.imprimir())
+                            x+=1
+
+
+
             
 
         
@@ -64,8 +84,13 @@ def cargar_archivo(ruta):
         
 
         #lectura de filas y columnas contagiadas
-        for x in nuevo_paciente.iter("celda"):
-            print(x.attrib["f"],x.attrib["c"])
+        for celda in nuevo_paciente.iter("celda"):
+            fila_entero=int(celda.attrib["f"])
+            columna_entero=int(celda.attrib["c"])
+            paciente_nuevo.celula.cambio_celula(fila_entero,columna_entero)
+            
+        
+            
     
     
         

@@ -27,14 +27,10 @@
         <periodos>6</periodos>
         <m>5</m>
         <rejilla>
-            <celda f="1" c="1" />
             <celda f="1" c="2" />
-            <celda f="2" c="1" />
-            <celda f="2" c="2" />
-            <celda f="6" c="6" />
-            <celda f="6" c="7" />
-            <celda f="7" c="6" />
-            <celda f="7" c="7" />
+            <celda f="2" c="3" />
+            <celda f="2" c="4" />
+            <celda f="4" c="4" />
         </rejilla>
     </paciente>
 
@@ -44,16 +40,9 @@
             <edad>12</edad>
         </datospersonales>
         <periodos>9</periodos>
-        <m>5</m>
+        <m>8</m>
         <rejilla>
-            <celda f="1" c="1" />
-            <celda f="1" c="2" />
-            <celda f="2" c="1" />
-            <celda f="2" c="2" />
-            <celda f="6" c="6" />
-            <celda f="6" c="7" />
-            <celda f="7" c="6" />
-            <celda f="7" c="7" />
+            <celda f="2" c="4" /> 
         </rejilla>
     </paciente>
 
