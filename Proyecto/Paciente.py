@@ -50,6 +50,9 @@ class lista_paciente:
                 return  None
         return nodoaux
 
+    def delete(self):
+        if self.primero is not None:
+            self.primero=None
 
 
 

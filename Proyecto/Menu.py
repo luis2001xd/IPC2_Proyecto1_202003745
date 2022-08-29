@@ -45,10 +45,37 @@ def menu():
                         
                         print(paciente_buscado.paciente.celula.imprimir())
                         x=1
-                        while x<=5:
+                        while x<=paciente_buscado.paciente.periodo:
+                            print()
+                            print("__________________________________________\n")
+                            print("Período No",x)
+                            print()
                             paciente_buscado.paciente.celula.periodos()
                             print(paciente_buscado.paciente.celula.imprimir())
                             x+=1
+                    npacientes.delete()
+                    cargar_archivo("prueba.xml")
+                    paciente_buscado=npacientes.buscar(paciente)
+
+                    if opcion_ejecucion==2:
+                        print("Patrón inicial:")
+                        
+                        print(paciente_buscado.paciente.celula.imprimir())
+                        x=1
+                        while x<=10000:
+                            print()
+                            print("__________________________________________\n")
+                            print("Período No",x)
+                            print()
+                            paciente_buscado.paciente.celula.periodos()
+                            print(paciente_buscado.paciente.celula.imprimir())
+                            x+=1
+                    npacientes.delete()
+                    cargar_archivo("prueba.xml")
+                    paciente_buscado=npacientes.buscar(paciente)
+
+
+
 
 
 
@@ -78,17 +105,13 @@ def cargar_archivo(ruta):
         paciente_nuevo=paciente(nombre,edad_entero,tamano_entero,periodo_entero)
         npacientes.append(paciente_nuevo)
         paciente_nuevo.celula.append()
-
+        
         #creación de rejilla
-        
-        
-
         #lectura de filas y columnas contagiadas
         for celda in nuevo_paciente.iter("celda"):
             fila_entero=int(celda.attrib["f"])
             columna_entero=int(celda.attrib["c"])
             paciente_nuevo.celula.cambio_celula(fila_entero,columna_entero)
-            
         
             
     

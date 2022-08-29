@@ -1,5 +1,5 @@
 
-
+import os
 class celula:
     def __init__(self,tipo=None,anterior=None,siguiente=None,fila=None,columna=None):
         self.tipo=tipo
@@ -110,7 +110,7 @@ class lista_celulas:
                         contador_contagiadas+=1
 
                 #para las células de la primera fila, siempre y cuando no sea la última
-                if celula_estudiada.columna!=self.tamano and celula_estudiada.columna!=1:
+                if celula_estudiada.columna!=self.tamano and celula_estudiada.columna!=1 and celula_estudiada.columna!=self.tamano:
                     if celula_estudiada.siguiente.tipo=="1":
                         contador_contagiadas+=1
                     if celula_estudiada.anterior.tipo=="1":
@@ -199,9 +199,11 @@ class lista_celulas:
                 if vecino_anterior.siguiente.tipo=="1":
                     contador_contagiadas+=1
 
+
+
             #para las células de la última fila siempre y cuando no sean los extremos
 
-            if celula_estudiada.fila==self.tamano and celula_estudiada.columna!=self.tamano:
+            if celula_estudiada.fila==self.tamano and celula_estudiada.columna!=self.tamano and celula_estudiada.columna!=1:
 
                 if celula_estudiada.anterior.tipo=="1":
                     contador_contagiadas+=1
@@ -254,7 +256,7 @@ class lista_celulas:
 
             if celula_estudiada.columna==self.tamano and celula_estudiada.fila!=1 and celula_estudiada.fila!=self.tamano:
                 if celula_estudiada.anterior.tipo=="1":
-                    columna_estudiada+=1
+                    contador_contagiadas+=1
                 columna_estudiada=celula_estudiada.columna
                 fila_anterior=celula_estudiada.fila-1
                 fila_siguiente=celula_estudiada.fila+1
@@ -279,6 +281,8 @@ class lista_celulas:
 
                 if vecino_siguiente.anterior.tipo=="1":
                     contador_contagiadas+=1
+
+                
 
         #después de todas las validaciones quedan las celulas del centro
 
@@ -337,7 +341,7 @@ class lista_celulas:
                     self.append(celula_estudiada.fila,celula_estudiada.columna,celula_estudiada.tipo)
             x+=1
             celula_estudiada=celula_estudiada.siguiente
-            
+        
 
 
                 

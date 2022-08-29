@@ -16,6 +16,26 @@
             <celda f="6" c="7" />
             <celda f="7" c="6" />
             <celda f="7" c="7" />
+            <celda f="10" c="1" />
+            <celda f="4"  c="9" />
+            <celda f="3" c="2" />
+            <celda f="5" c="8" />
+            <celda f="5" c="4" />
+            <celda f="10" c="10" />
+            <celda f="1" c="10" />
+            <celda f="4" c="3" />
+            <celda f="9" c="1" />
+            <celda f="9" c="2" />
+            <celda f="9" c="4"/>
+            <celda f="5" c="10" />
+            <celda f="4" c="1" />
+            <celda f="2" c="9"/>
+            <celda f="2" c="10" />
+            <celda f="2" c="7" />
+            <celda f="3" c="8" />
+            <celda f="8" c="1" />
+            <celda f="8" c="4" />
+            <celda f="8" c="2" />
         </rejilla>
     </paciente>
 
