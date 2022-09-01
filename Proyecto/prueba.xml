@@ -44,27 +44,51 @@
             <nombre>Pablo</nombre>
             <edad>19</edad>
         </datospersonales>
-        <periodos>6</periodos>
-        <m>5</m>
+        <periodos>5</periodos>
+        <m>10</m>
         <rejilla>
+            <celda f="1" c="1" />
+            <celda f="2" c="1" />
+            <celda f="2" c="2" />
             <celda f="1" c="2" />
-            <celda f="2" c="3" />
-            <celda f="2" c="4" />
-            <celda f="4" c="4" />
         </rejilla>
     </paciente>
 
     <paciente>
         <datospersonales>
-            <nombre>Lucas</nombre>
-            <edad>12</edad>
+            <nombre>juan</nombre>
+            <edad>11</edad>
         </datospersonales>
-        <periodos>9</periodos>
-        <m>8</m>
+        <periodos>75</periodos>
+        <m>10</m>
         <rejilla>
-            <celda f="2" c="4" /> 
+            <celda f="1" c="6" />
+            <celda f="2" c="6" />
+            <celda f="3" c="6" />
+            <celda f="5" c="2" />
+            <celda f="5" c="3" />
+            <celda f="5" c="4" />
+            <celda f="5" c="7" />
+            <celda f="5" c="8" />
+            <celda f="5" c="9" />
+            <celda f="7" c="5" />
+            <celda f="8" c="5" />
+            <celda f="9" c="5" />
         </rejilla>
     </paciente>
 
-
+    <paciente>
+        <datospersonales>
+            <nombre>jose</nombre>
+            <edad>22</edad>
+        </datospersonales>
+        <periodos>5</periodos>
+        <m>10</m>
+        <rejilla>
+            <celda f="5" c="8" />
+            <celda f="1" c="6" />
+            <celda f="2" c="6" />
+            <celda f="3" c="6" />
+        </rejilla>
+    </paciente>
 </pacientes>

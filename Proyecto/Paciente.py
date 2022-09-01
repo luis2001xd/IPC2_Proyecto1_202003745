@@ -1,14 +1,17 @@
 
 from Celula import lista_celulas
-
+from Rejilla import lista_rejilla
 class paciente:
-    def __init__(self,nombre,edad,tamano,periodo,siguiente=None,anterior=None) -> None:
+    def __init__(self,nombre,edad,tamano,periodo,estado=None,periodo_repetido=None,numero=None,siguiente=None,anterior=None) -> None:
         self.nombre=nombre
         self.edad=edad
         self.tamano=tamano
         self.periodo=periodo
+        self.rejilla=lista_rejilla(periodo)
         self.celula=lista_celulas(tamano,periodo)
-        
+        self.estado=estado
+        self.periodo_repetido=periodo_repetido
+        self.numero=numero
 
 
 class nodo_paciente:
@@ -36,7 +39,7 @@ class lista_paciente:
     def print(self):
         nodoaux=self.primero
         while nodoaux!=None:
-            print("Nombre:",nodoaux.paciente.nombre,"Edad:",nodoaux.paciente.edad)
+            print("Nombre:",nodoaux.paciente.nombre,"Edad:",nodoaux.paciente.edad,"Períodos:",nodoaux.paciente.periodo,"Tamaño matriz",nodoaux.paciente.tamano)
             nodoaux=nodoaux.siguiente
 
 

@@ -1,5 +1,6 @@
 
 import os
+from Rejilla import lista_rejilla
 class celula:
     def __init__(self,tipo=None,anterior=None,siguiente=None,fila=None,columna=None):
         self.tipo=tipo
@@ -16,6 +17,7 @@ class lista_celulas:
         self.periodo=periodo
         self.tamano=tamano
         self.primero=None
+        
 
 #append crea la matriz
 
@@ -83,6 +85,7 @@ class lista_celulas:
        
         fila_siguiente=0
         columna_estudiada=0
+        cadena=""
         
         while x!=self.tamano*self.tamano: 
             contador_contagiadas=0
@@ -149,7 +152,7 @@ class lista_celulas:
                         contador_contagiadas+=1
 
 
-            #si la celula estudiada pertenece a la primera columna y no sea de la última fila
+            #para lás celulas de la primera columna
             if celula_estudiada.columna==1 and celula_estudiada.fila!=self.tamano and celula_estudiada.fila!=1:
                 if celula_estudiada.siguiente.tipo=="1":
                     contador_contagiadas+=1
@@ -340,7 +343,81 @@ class lista_celulas:
                 else:
                     self.append(celula_estudiada.fila,celula_estudiada.columna,celula_estudiada.tipo)
             x+=1
+            cadena+=celula_estudiada.tipo
             celula_estudiada=celula_estudiada.siguiente
+
+
+            
+
+    def retornar_rejillas(self):
+        cadena=""
+        aux=self.primero
+        while aux!=None:
+            cadena+=aux.tipo
+            aux=aux.siguiente
+        return cadena
+
+    def volver_inicial(self,cadena):
+        fila2=0
+        columna2=1
+        for i in range(len(cadena)):
+            if i%self.tamano==0:
+                fila2+=1
+                columna2=1
+            self.append(fila=fila2,columna=columna2,tipo=cadena[i])
+            columna2+=1
+
+
+
+    def graficar(self,periodo):
+        aux=self.primero
+        
+        cadena = "digraph G { style=\"filled\" \n"\
+        "fontname=\"Helvetica, Atial,sans-serif\" \n"\
+        "node [fontname=\"Helvetica,Arial,sans-serif\"] \n"\
+        "edge [fontname=\"Helvetica,Arial,sans-serif\"] \n" \
+            "subgraph cluster1 { style=\"filled\" label=\"Periodo "+str(periodo-1)+"\"""\n"\
+            "node [shape=square style=\"radial\" gradientangle=180]"\
+            "a0 [label=<\n"\
+            "<TABLE border=\"10\" cellspacing=\"10\" cellpadding=\"10\" style=\"rounded\"  gradientangle=\"315\">\n"
+
+
+		
+        for i in range(1,self.tamano+1):
+            cadena+="<TR>"
+            for j in range(1,self.tamano+1):
+                cadena+="<TD border=\"3\" "
+                if aux.tipo=="1":
+                    cadena+="bgcolor=\"red\" gradientangle=\"315\">"
+                if aux.tipo=="0":
+                    cadena+="bgcolor=\"white\" gradientangle=\"315\">"
+                cadena+="</TD>\n"
+                aux=aux.siguiente
+            cadena+="</TR>"
+        
+        cadena += "</TABLE>>]; \n"\
+
+        cadena+="}\n"
+
+        cadena+="}"
+        ruta=""
+        ruta+="Periodos/nodo"
+        ruta+=str(periodo)
+        ruta+=".dot"
+        imagen="Periodos/nodo"
+        imagen+=str(periodo)
+        imagen+=".png"
+        nodo="Periodos/nodo"
+        nodo+=str(periodo)
+        nodo+=".dot"
+        nodo_final="dot -Tpng "+nodo+" -o "+imagen
+        file = open(ruta, "w+")
+        file.write(cadena)
+        file.close()
+        os.system(nodo_final)
+    
+        
+            
         
 
 

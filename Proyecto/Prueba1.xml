@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pacientes>
+    <paciente>
+        <datospersonales>
+            <nombre>juan</nombre>
+            <edad>11</edad>
+        </datospersonales>
+        <periodos>70</periodos>
+        <m>10</m>
+        <rejilla>
+            <celda f="1" c="6" />
+            <celda f="2" c="6" />
+            <celda f="3" c="6" />
+            <celda f="5" c="2" />
+            <celda f="5" c="3" />
+            <celda f="5" c="4" />
+            <celda f="5" c="7" />
+            <celda f="5" c="8" />
+            <celda f="5" c="9" />
+            <celda f="7" c="5" />
+            <celda f="8" c="5" />
+            <celda f="9" c="5" />
+        </rejilla>
+    </paciente>
+    <paciente>
+        <datospersonales>
+            <nombre>jose</nombre>
+            <edad>22</edad>
+        </datospersonales>
+        <periodos>10</periodos>
+        <m>9</m>
+        <rejilla>
+            <celda f="5" c="8" />
+            <celda f="1" c="6" />
+            <celda f="2" c="6" />
+            <celda f="3" c="6" />
+        </rejilla>
+    </paciente>
+    <paciente>
+        <datospersonales>
+            <nombre>pedro</nombre>
+            <edad>18</edad>
+        </datospersonales>
+        <periodos>5</periodos>
+        <m>10</m>
+        <rejilla>
+            <celda f="1" c="6" />
+        </rejilla>
+    </paciente>
+    <paciente>
+        <datospersonales>
+            <nombre>maria</nombre>
+            <edad>48</edad>
+        </datospersonales>
+        <periodos>6</periodos>
+        <m>10</m>
+        <rejilla>
+        </rejilla>
+    </paciente>
+</pacientes>
