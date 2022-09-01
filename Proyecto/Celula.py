@@ -400,14 +400,20 @@ class lista_celulas:
         cadena+="}\n"
 
         cadena+="}"
-        ruta=""
-        ruta+="Periodos/nodo"
+        cadena1=os.path.dirname(os.path.abspath(__file__))
+        print(cadena1)
+        ruta=cadena1
+        ruta+="\\Periodos\\nodo"
         ruta+=str(periodo)
         ruta+=".dot"
-        imagen="Periodos/nodo"
+    
+        imagen=cadena1
+        imagen+="\\Periodos\\nodo"
         imagen+=str(periodo)
         imagen+=".png"
-        nodo="Periodos/nodo"
+        
+        nodo=cadena1
+        nodo+="\\Periodos\\nodo"
         nodo+=str(periodo)
         nodo+=".dot"
         nodo_final="dot -Tpng "+nodo+" -o "+imagen
