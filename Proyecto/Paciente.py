@@ -1,6 +1,7 @@
 
 from Celula import lista_celulas
 from Rejilla import lista_rejilla
+import os
 class paciente:
     def __init__(self,nombre,edad,tamano,periodo,estado=None,periodo_repetido=None,numero=None,siguiente=None,anterior=None) -> None:
         self.nombre=nombre
@@ -56,6 +57,30 @@ class lista_paciente:
     def delete(self):
         if self.primero is not None:
             self.primero=None
+
+
+    def generar_xml(self):
+        nodoaux=self.primero
+        cadena="<?xml version=\"1.0\" encoding=\"UTF-8\"?> \n"
+        cadena+="<pacientes> \n"
+        while nodoaux!=None:
+            cadena+="   <paciente>\n"
+            cadena+="      <datospersonales>\n"
+            cadena+="         <nombre>"+nodoaux.paciente.nombre+"</nombre>\n"
+            cadena+="         <edad>"+str(nodoaux.paciente.edad)+"</edad>\n"
+            cadena+="      </datospersonales>\n"
+            cadena+="      <periodos>"+str(nodoaux.paciente.periodo)+"</periodos>\n"
+            cadena+="      <tamano>"+str(nodoaux.paciente.tamano)+"</tamano>\n"
+            cadena+="      <resultado>"+nodoaux.paciente.estado+"</resultado>\n"
+            cadena+="      <n>"+str(nodoaux.paciente.periodo_repetido)+"</n>\n"
+            cadena+="      <n1>"+str(nodoaux.paciente.numero)+"</n1>\n"
+            nodoaux=nodoaux.siguiente
+
+        cadena+="</pacientes>"
+        file = open("Resultados.xml", "w")
+        file.write(cadena)
+        file.close() 
+
 
 
 

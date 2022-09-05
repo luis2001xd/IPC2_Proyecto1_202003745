@@ -401,7 +401,6 @@ class lista_celulas:
 
         cadena+="}"
         cadena1=os.path.dirname(os.path.abspath(__file__))
-        print(cadena1)
         ruta=cadena1
         ruta+="\\Periodos\\nodo"
         ruta+=str(periodo)
@@ -416,7 +415,9 @@ class lista_celulas:
         nodo+="\\Periodos\\nodo"
         nodo+=str(periodo)
         nodo+=".dot"
+
         nodo_final="dot -Tpng "+nodo+" -o "+imagen
+        
         file = open(ruta, "w+")
         file.write(cadena)
         file.close()

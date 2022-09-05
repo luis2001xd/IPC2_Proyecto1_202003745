@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<pacientes> 
+   <paciente>
+      <datospersonales>
+         <nombre>juan</nombre>
+         <edad>11</edad>
+      </datospersonales>
+      <periodos>70</periodos>
+      <tamano>10</tamano>
+      <resultado>Grave</resultado>
+      <n>63</n>
+      <n1>2</n1>
+   <paciente>
+      <datospersonales>
+         <nombre>jose</nombre>
+         <edad>22</edad>
+      </datospersonales>
+      <periodos>10</periodos>
+      <tamano>9</tamano>
+      <resultado>Grave</resultado>
+      <n>1</n>
+      <n1>2</n1>
+   <paciente>
+      <datospersonales>
+         <nombre>pedro</nombre>
+         <edad>18</edad>
+      </datospersonales>
+      <periodos>5</periodos>
+      <tamano>10</tamano>
+      <resultado>Mortal</resultado>
+      <n>1</n>
+      <n1>1</n1>
+   <paciente>
+      <datospersonales>
+         <nombre>maria</nombre>
+         <edad>48</edad>
+      </datospersonales>
+      <periodos>6</periodos>
+      <tamano>10</tamano>
+      <resultado>Mortal</resultado>
+      <n>Patron inicial</n>
+      <n1>1</n1>
+</pacientes>

@@ -9,15 +9,16 @@ def menu():
     print(Fore.YELLOW+"------------Bienvenido usuario ♣--------------")
     opcion=""
     
-    while opcion!=4:
+    while opcion!=5:
         opcion_ejecucion=""
         print()
         print(Fore.CYAN+"------------Menú---------------")
         print()
         print(Fore.CYAN+"1. Cargar Archivo")
-        print(Fore.CYAN+"2. Ver pacientes cargados")
+        print(Fore.CYAN+"2. Ver información de los pacientes cargados")
         print(Fore.CYAN+"3. Elegir paciente para realizar su respectivo análisis")
-        print(Fore.CYAN+"4.Salir")
+        print("4. Generar archivo xml de salida")
+        print(Fore.CYAN+"5. Salir")
         print()
         opcion=int(input())
         if opcion==1:
@@ -71,11 +72,14 @@ def menu():
                         periodo=paciente_buscado.paciente.rejilla.periodoinfectado()
                         print("Periodo que se empieza a repetir:",periodo)
                         repeticiones=paciente_buscado.paciente.rejilla.repeticiones()
-                        print("Cuantas veces se repite:",repeticiones)
+                        print("Cada cuántos períodos se repite el patrón:",repeticiones)
                         inicial=paciente_buscado.paciente.rejilla.retornar_patron()
                         paciente_buscado.paciente.celula.volver_inicial(inicial)
                         paciente_buscado.paciente.rejilla.delete()
                         print()
+
+        if opcion==4:
+            npacientes.generar_xml()
 
                         
                         
@@ -148,8 +152,6 @@ def cargar_archivo(ruta):
     except Exception as e:
         print("El archivo no fue cargado correctamente")       
 
-def generar_xml(cadenaxml):
-    cadena="<?xml version=\"1.0\" encoding=\"UTF-8\"?> \n"
 
 
 

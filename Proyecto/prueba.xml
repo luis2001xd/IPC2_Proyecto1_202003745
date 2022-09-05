@@ -5,7 +5,7 @@
             <nombre>Luis</nombre>
             <edad>15</edad>
         </datospersonales>
-        <periodos>5</periodos>
+        <periodos>85</periodos>
         <m>10</m>
         <rejilla>
             <celda f="1" c="1" />
@@ -59,7 +59,7 @@
             <nombre>juan</nombre>
             <edad>11</edad>
         </datospersonales>
-        <periodos>75</periodos>
+        <periodos>80</periodos>
         <m>10</m>
         <rejilla>
             <celda f="1" c="6" />
@@ -82,13 +82,28 @@
             <nombre>jose</nombre>
             <edad>22</edad>
         </datospersonales>
-        <periodos>5</periodos>
+        <periodos>12</periodos>
         <m>10</m>
         <rejilla>
             <celda f="5" c="8" />
             <celda f="1" c="6" />
             <celda f="2" c="6" />
             <celda f="3" c="6" />
+        </rejilla>
+    </paciente>
+    <paciente>
+        <datospersonales>
+            <nombre>Jekaa</nombre>
+            <edad>19</edad>
+        </datospersonales>
+        <periodos>5</periodos>
+        <m>10</m>
+        <rejilla>
+            <celda f="1" c="1" />
+            <celda f="2" c="1" />
+            <celda f="2" c="2" />
+            <celda f="1" c="2" />
+            <celda f="5" c="4" />
         </rejilla>
     </paciente>
 </pacientes>

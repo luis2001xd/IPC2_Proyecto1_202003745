@@ -1,3 +1,6 @@
+from ast import Nonlocal
+
+
 class rejilla:
     def __init__(self,datos,numero,anterior=None,siguiente=None) -> None:
         self.datos=datos
@@ -38,15 +41,35 @@ class lista_rejilla:
 
     #función que determina el estado del paciente
     def verificar_repeticion(self):
-        nodoaux=self.primero
+        nodoaux=self.primero.siguiente
         nodo_secundario=nodoaux
 
+            
+        x=1
+
+        while nodoaux.siguiente!=None:
+            if nodoaux.datos==self.primero.datos:
+                if nodoaux.siguiente!=None:
+                    if nodoaux.datos==nodoaux.siguiente.datos:
+                        self.estado="Mortal"
+                        self.periodo_infectado="Patron inicial"
+                        self.repeticion=x
+                        return
+
+                self.estado="Grave"
+                self.periodo_infectado="Patron inicial"
+                self.repeticion=x
+                return
+            nodoaux=nodoaux.siguiente
+            x+=1
+
+        nodoaux=self.primero.siguiente
 
         while nodoaux.siguiente!=None:
             x=1
             if nodoaux.datos==nodoaux.siguiente.datos:
                 self.estado="Mortal"
-                self.periodo_infectado=nodoaux.numero
+                self.periodo_infectado=nodoaux.numero-1
                 self.repeticion=x
                 return
             else:
@@ -60,7 +83,7 @@ class lista_rejilla:
                             if nodo_secundario.siguiente!=None:
                                 if nodo_secundario.siguiente.datos==nodo_secundario.datos: #se verifica si la enfermedad es mortal
                                     self.estado="Mortal"
-                                    self.periodo_infectado=nodoaux.numero
+                                    self.periodo_infectado=nodoaux.numero-1
                                     self.repeticion=x
                                     return
                             #sino es mortal pero no se repite seguido, significa que será grave
@@ -75,7 +98,7 @@ class lista_rejilla:
             nodo_secundario=nodoaux
         self.estado="Leve"
         self.periodo_infectado= "Ninguno"
-        self.repeticion= "Ninguna"
+        self.repeticion= "Ninguno"
         return
 
 
