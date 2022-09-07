@@ -80,6 +80,7 @@ def menu():
 
         if opcion==4:
             npacientes.generar_xml()
+            print("Archivo generado con éxito")
 
                         
                         

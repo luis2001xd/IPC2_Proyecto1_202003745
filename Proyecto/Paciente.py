@@ -3,7 +3,7 @@ from Celula import lista_celulas
 from Rejilla import lista_rejilla
 import os
 class paciente:
-    def __init__(self,nombre,edad,tamano,periodo,estado=None,periodo_repetido=None,numero=None,siguiente=None,anterior=None) -> None:
+    def __init__(self,nombre,edad,tamano,periodo,estado=None,periodo_repetido=None,numero=None) -> None:
         self.nombre=nombre
         self.edad=edad
         self.tamano=tamano

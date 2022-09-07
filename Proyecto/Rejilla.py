@@ -40,14 +40,16 @@ class lista_rejilla:
 
 
     #función que determina el estado del paciente
+
+
     def verificar_repeticion(self):
         nodoaux=self.primero.siguiente
-        nodo_secundario=nodoaux
-
-            
+        nodo_secundario=nodoaux   
         x=1
 
-        while nodoaux.siguiente!=None:
+        
+
+        while nodoaux!=None:
             if nodoaux.datos==self.primero.datos:
                 if nodoaux.siguiente!=None:
                     if nodoaux.datos==nodoaux.siguiente.datos:

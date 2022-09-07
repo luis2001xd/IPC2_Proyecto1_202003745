@@ -2,10 +2,30 @@
 <pacientes> 
    <paciente>
       <datospersonales>
+         <nombre>Luis</nombre>
+         <edad>15</edad>
+      </datospersonales>
+      <periodos>10</periodos>
+      <tamano>10</tamano>
+      <resultado>Leve</resultado>
+      <n>Ninguno</n>
+      <n1>Ninguno</n1>
+   <paciente>
+      <datospersonales>
+         <nombre>Pablo</nombre>
+         <edad>19</edad>
+      </datospersonales>
+      <periodos>2</periodos>
+      <tamano>10</tamano>
+      <resultado>Mortal</resultado>
+      <n>1</n>
+      <n1>1</n1>
+   <paciente>
+      <datospersonales>
          <nombre>juan</nombre>
          <edad>11</edad>
       </datospersonales>
-      <periodos>70</periodos>
+      <periodos>80</periodos>
       <tamano>10</tamano>
       <resultado>Grave</resultado>
       <n>63</n>
@@ -15,29 +35,29 @@
          <nombre>jose</nombre>
          <edad>22</edad>
       </datospersonales>
-      <periodos>10</periodos>
-      <tamano>9</tamano>
+      <periodos>15</periodos>
+      <tamano>10</tamano>
       <resultado>Grave</resultado>
-      <n>1</n>
+      <n>12</n>
       <n1>2</n1>
    <paciente>
       <datospersonales>
-         <nombre>pedro</nombre>
-         <edad>18</edad>
+         <nombre>Jekaa</nombre>
+         <edad>19</edad>
       </datospersonales>
-      <periodos>5</periodos>
-      <tamano>10</tamano>
+      <periodos>25</periodos>
+      <tamano>20</tamano>
       <resultado>Mortal</resultado>
-      <n>1</n>
+      <n>17</n>
       <n1>1</n1>
    <paciente>
       <datospersonales>
-         <nombre>maria</nombre>
-         <edad>48</edad>
+         <nombre>Jessica</nombre>
+         <edad>19</edad>
       </datospersonales>
-      <periodos>6</periodos>
-      <tamano>10</tamano>
+      <periodos>12</periodos>
+      <tamano>20</tamano>
       <resultado>Mortal</resultado>
-      <n>Patron inicial</n>
+      <n>3</n>
       <n1>1</n1>
 </pacientes>
